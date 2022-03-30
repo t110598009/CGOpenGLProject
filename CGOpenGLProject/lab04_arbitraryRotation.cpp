@@ -41,6 +41,14 @@ GLfloat ScaleMatrix[16] =
 	0.0, 0.0, 1.0, 0.0,
 	0.0, 0.0, 0.0, 1.0,
 };
+
+GLfloat MultiMatrix[16] =
+{
+	1.0, 0.0, 0.0, 0.0,
+	0.0, 1.0, 0.0, 0.0,
+	0.0, 0.0, 1.0, 0.0,
+	0.0, 0.0, 0.0, 1.0,
+};
 GLdouble projectionMatrix[16];
 GLdouble modelViewMatrix[16];
 int viewport[4];
@@ -353,11 +361,8 @@ void my_Mouse(GLint button, GLint state, GLint x, GLint y)
 	case GLUT_LEFT_BUTTON:
 		if (state == GLUT_DOWN)
 		{
-			/*
-			mouseX = ((float)x / 400) * 2 - 1;
-			mouseY = -((float)y / 400) * 2 + 1;
-			mouseZ = (zNear + zFar) / (zNear - zFar);*/
-			std::cout << "(" << x << "," << y << ")" << std::endl;
+			
+			//std::cout << "(" << x << "," << y << ")" << std::endl;
 			mouseWX = 1; mouseWY = mouseWZ = 0;
 			float winX = (float)x;
 			float winY = (float)y;
@@ -370,9 +375,7 @@ void my_Mouse(GLint button, GLint state, GLint x, GLint y)
 		break;
 	case GLUT_RIGHT_BUTTON:
 		if (state == GLUT_DOWN)
-		{
-			
-		}
+		{}
 		break;
 	default:
 		break;
@@ -380,27 +383,6 @@ void my_Mouse(GLint button, GLint state, GLint x, GLint y)
 	glutPostRedisplay();
 }
 
-//void do_arbitatyRotate(GLdouble angle)
-//{
-//	// Rotate angle Degrees around arbitaty-Achsis
-//	GLdouble cosA = cos(angle * PI / 180);
-//	GLdouble sinA = sin(angle * PI / 180);
-//	double x = mouseWX, y = mouseWY, z = mouseWZ;
-//	double magnitude = sqrt(x * x + y * y + z * z);
-//	if (magnitude == 0) throw "ERROR";
-//	x /= magnitude;
-//	y /= magnitude;
-//	z /= magnitude;
-//	//cout << "new (x,y,z):(" << x << "," << y << "," << z << ")" << endl;
-//	// populate matrix in column major order
-//	GLdouble m[4][4] = {
-//	  { cosA + (1 - cosA) * pow(x,2),	(1 - cosA) * x * y - sinA * z,	(1 - cosA) * x * z + sinA * y, 0.0}, // <- X column
-//	  { (1 - cosA) * y * x + sinA * z,	cosA + (1 - cosA) * pow(y, 2),   (1 - cosA) * y * z + sinA * x, 0.0}, // <- Y column
-//	  { (1 - cosA) * z * x + sinA * y,	(1 - cosA) * z * y + sinA * x,	cosA + (1 - cosA) * pow(z, 2), 0.0}, // <- Z column
-//	  { 0.0,	0.0,	0.0,  1.0}  // <- W column
-//	};
-//	glMultMatrixd(&m[0][0]);
-//}
 void do_arbitraryRotate(GLdouble angle)
 {
 	// Rotate angle Degrees around arbitaty-Achsis
@@ -413,21 +395,15 @@ void do_arbitraryRotate(GLdouble angle)
 	y /= magnitude;
 	z /= magnitude;
 
-	GLfloat m[16] =
-	{
-		1.0, 0.0, 0.0, 0.0,
-		0.0, 1.0, 0.0, 0.0,
-		0.0, 0.0, 1.0, 0.0,
-		0.0, 0.0, 0.0, 1.0,
-	};
-	m[0] = Cos + (1 - Cos) * x * x;
-	m[1] = (1 - Cos) * y * x + Sin * z;
-	m[2] = (1 - Cos) * z * x + Sin * y;
-	m[4] = (1 - Cos) * x * y - Sin * z;
-	m[5] = Cos + (1 - Cos) * y * y;
-	m[6] = (1 - Cos) * z * y + Sin * x;
-	m[8] = (1 - Cos) * x * z + Sin * y;
-	m[9] = (1 - Cos) * y * z + Sin * x;
-	m[10] = Cos + (1 - Cos) * z * z;
-	glMultMatrixf(m);
+	
+	MultiMatrix[0] = Cos + (1 - Cos) * x * x;
+	MultiMatrix[1] = (1 - Cos) * y * x + Sin * z;
+	MultiMatrix[2] = (1 - Cos) * z * x - Sin * y; // Should be minus between two numbers
+	MultiMatrix[4] = (1 - Cos) * x * y - Sin * z;
+	MultiMatrix[5] = Cos + (1 - Cos) * y * y;
+	MultiMatrix[6] = (1 - Cos) * z * y + Sin * x;
+	MultiMatrix[8] = (1 - Cos) * x * z + Sin * y;
+	MultiMatrix[9] = (1 - Cos) * y * z - Sin * x; // Should be minus between two numbers
+	MultiMatrix[10] = Cos + (1 - Cos) * z * z;
+	glMultMatrixf(MultiMatrix);
 }
