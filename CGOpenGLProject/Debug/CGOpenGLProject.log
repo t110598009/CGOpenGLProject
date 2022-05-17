@@ -1,0 +1,7 @@
+﻿  lab07_texture.cpp
+D:\ProgramProject\A_ntut\ntut_cg\CGOpenGLProject\CGOpenGLProject\lab07_texture.cpp(114,9): warning C4101: 'format': 未參考的區域變數
+D:\ProgramProject\A_ntut\ntut_cg\CGOpenGLProject\CGOpenGLProject\lab07_texture.cpp(113,8): warning C4101: 'nWidth': 未參考的區域變數
+D:\ProgramProject\A_ntut\ntut_cg\CGOpenGLProject\CGOpenGLProject\lab07_texture.cpp(113,16): warning C4101: 'nHeight': 未參考的區域變數
+D:\ProgramProject\A_ntut\ntut_cg\CGOpenGLProject\CGOpenGLProject\lab07_texture.cpp(113,25): warning C4101: 'nComponents': 未參考的區域變數
+D:\ProgramProject\A_ntut\ntut_cg\CGOpenGLProject\CGOpenGLProject\lab07_texture.cpp(112,10): warning C4101: 'pBytes': 未參考的區域變數
+  CGOpenGLProject.vcxproj -> D:\ProgramProject\A_ntut\ntut_cg\CGOpenGLProject\Debug\CGOpenGLProject.exe

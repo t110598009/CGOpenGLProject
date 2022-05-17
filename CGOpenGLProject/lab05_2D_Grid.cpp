@@ -272,7 +272,7 @@ void my_Mouse(int button, int state, int x, int y) {
 			if (abs(x_min) > gridSize || abs(x_max) > gridSize ||
 				abs(y_min) > gridSize || abs(y_max) > gridSize)
 				return;
-			cout << x_min<< "," << y_min << ")" << endl;
+			
 			cout << "Grid座標 : (" << (int)ceil((float)(x_max + x_min) / 2.0) << "," << (int)ceil((float)(y_max + y_min) / 2.0) << ")" << endl;
 			isClicked = true;
 
@@ -303,8 +303,6 @@ void MidPointLine(int x0, int y0, int x1, int y1) {
 		return;
 	}
 
-	cout << x0 << " " << y0 << endl;
-	cout << x1 << " " << y1 << endl;
 
 	int slopex = 1, slopey = 1, i = 0;
 	int dx = x1 - x0, dy = y1 - y0;
@@ -318,7 +316,7 @@ void MidPointLine(int x0, int y0, int x1, int y1) {
 	if (y1 < y0) {
 		slopey = -1;
 	}
-	cout << "dy:" << dy << endl;
+	//cout << "dy:" << dy << endl;
 
 
 	if (dx > dy) {
@@ -337,13 +335,14 @@ void MidPointLine(int x0, int y0, int x1, int y1) {
 			x++;
 			i++;
 			DrawPixel(x, y, 1);
+			cout << x << " " << y << endl;
 		}
 	}
 	else {
 		d = 2 * dx - dy;
 		delE = 2 * dx;
 		delNE = 2 * (dx - dy);
-		cout << "y=" << y << "  y1= " << y1 << endl;
+		//cout << "y=" << y << "  y1= " << y1 << endl;
 		while (i < dy) {
 			if (d <= 0) {
 				d += delE;

@@ -58,7 +58,7 @@ int main(int argc, char** argv)
 	tx = ty = tz = 0;
 	thetaX = thetaY = thetaZ  = thetaArb = 0;
 	mouseWX = 1, mouseWY = 0, mouseWZ = 0;
-
+	cout << "110598009 ­J§B·½" << endl;
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize(400, 400);
@@ -187,8 +187,10 @@ void RenderScene(void)
 	glColor3f(1.0f, 0.0f, 1.0f);
 	glPointSize(10);
 	glBegin(GL_POINTS);
-	glVertex3f((float)mouseWX, (float)mouseWY, (float)mouseWZ);
+	glVertex3f((float)mouseWX + 1, (float)mouseWY + 1, (float)mouseWZ + 1);
 	glEnd();
+	glFlush();
+
 	//glVertex3f(mouseX, mouseY, 0);
 	glColor3f(1.0f, 0.0f, 1.0f);
 	glBegin(GL_LINES);

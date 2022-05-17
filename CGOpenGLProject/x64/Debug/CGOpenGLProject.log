@@ -1,0 +1,16 @@
+﻿  triangle_new.cpp
+triangle_new.obj : error LNK2019: 在函式 __imp_glutInitWindowPositionmain 中參考了無法解析的外部符號
+triangle_new.obj : error LNK2019: 在函式 __imp_glutInitWindowSizemain 中參考了無法解析的外部符號
+triangle_new.obj : error LNK2019: 在函式 __imp_glutInitDisplayModemain 中參考了無法解析的外部符號
+triangle_new.obj : error LNK2019: 在函式 __imp_glutMainLoopmain 中參考了無法解析的外部符號
+triangle_new.obj : error LNK2019: 在函式 __imp_glutPostRedisplay"void __cdecl menuSelect(int)" (?menuSelect@@YAXH@Z) 中參考了無法解析的外部符號
+triangle_new.obj : error LNK2019: 在函式 __imp_glutSwapBuffers"void __cdecl RenderScene(void)" (?RenderScene@@YAXXZ) 中參考了無法解析的外部符號
+triangle_new.obj : error LNK2019: 在函式 __imp_glutAddMenuEntry"void __cdecl buildPopupMenu(void)" (?buildPopupMenu@@YAXXZ) 中參考了無法解析的外部符號
+triangle_new.obj : error LNK2019: 在函式 __imp_glutAttachMenu"void __cdecl buildPopupMenu(void)" (?buildPopupMenu@@YAXXZ) 中參考了無法解析的外部符號
+triangle_new.obj : error LNK2019: 在函式 __imp_glutReshapeFuncmain 中參考了無法解析的外部符號
+triangle_new.obj : error LNK2019: 在函式 __imp_glutDisplayFuncmain 中參考了無法解析的外部符號
+triangle_new.obj : error LNK2019: 在函式 __imp___glutInitWithExitglutInit_ATEXIT_HACK 中參考了無法解析的外部符號
+triangle_new.obj : error LNK2019: 在函式 __imp___glutCreateWindowWithExitglutCreateWindow_ATEXIT_HACK 中參考了無法解析的外部符號
+triangle_new.obj : error LNK2019: 在函式 __imp___glutCreateMenuWithExitglutCreateMenu_ATEXIT_HACK 中參考了無法解析的外部符號
+D:\Program ToolsByCoding\freeglut\lib\freeglut.lib : warning LNK4272: 程式庫電腦類型 'x86' 與目標電腦類型 'x64' 發生衝突
+D:\ProgramProject\A_ntut\ntut_cg\CGOpenGLProject\x64\Debug\CGOpenGLProject.exe : fatal error LNK1120: 13 個無法解析的外部符號
